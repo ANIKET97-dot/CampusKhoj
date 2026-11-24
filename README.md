@@ -1,28 +1,32 @@
-# CampusKhoj – Smart Campus Lost & Found
+# React + TypeScript + Vite
 
-**Lost on Campus? Never Lost Alone.**
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-CampusKhoj is a web-based Lost & Found platform designed to simplify the process of reporting, discovering, and recovering lost belongings across large university campuses.
+Currently, two official plugins are available:
 
-The platform provides a centralized and user-friendly space where students, faculty, and campus staff can report lost items, register found belongings, discover potential matches, and securely initiate item recovery.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-### Key Features
+## React Compiler
 
-- **Lost & Found Reporting:** Easily report lost or found items with descriptions, images, dates, and locations.
-- **Smart Item Matching:** Identify potential matches between lost and found reports.
-- **Interactive Campus Map:** Explore item locations and designated collection points.
-- **Claim & Verification System:** Submit ownership requests and track claim status.
-- **Multilingual Support:** Accessible interface with English, Hindi, and Punjabi language options.
-- **Accessibility Settings:** Adjustable font sizes, high contrast, simple mode, and user-friendly navigation.
-- **QR-Based Reporting:** Simplify found-item reporting through QR codes.
-- **User Dashboard:** Track submitted reports, claims, notifications, and recovered items.
-- **Admin Dashboard:** Manage reports, verify ownership claims, and monitor item recovery.
-- **Community Recognition:** Encourage honest finders through appreciation badges and reward points.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### Our Mission
+## Expanding the Oxlint configuration
 
-To create a trusted campus community where returning lost belongings becomes simple, quick, and accessible to everyone, regardless of age or technical experience.
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
 
-### Vision
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
 
-Transform the traditional, scattered Lost & Found process into a centralized digital ecosystem that promotes trust, responsibility, and community participation across university campuses.
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
